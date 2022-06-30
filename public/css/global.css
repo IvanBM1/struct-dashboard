@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'myfont';
+    src: url('../fonts/Quicksand-VariableFont_wght.ttf') format('truetype');
+}
+
+* {
+    font-family: 'myfont';
+}
+
+html {
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.text.center {
+    display: flex;
+    text-align: center;
+}
+
+.text.end {
+    text-align: end;
+}
+
+.text.start {
+    text-align: start;
+}
+
+.items {
+    display: flex;
+    align-items: center;
+}
+
+.items.col {
+    flex-direction: column;
+}
+
+.items.space {
+    justify-content: space-between;
+}
+
+.items.start {
+    justify-content: flex-start;
+}
+
+.items.end {
+    justify-content: flex-end;
+}
+
+.items.center {
+    justify-content: center;
+}
+
+.items.around {
+    justify-content: space-around;
+}
+
+.items.start {
+    justify-content: flex-start;
+}
+
+.space {
+    margin: 16px;
+}
+
+.space.top {
+    margin: 0;
+    margin-top: 16px;
+}
+
+.space.bottom {
+    margin: 0;
+    margin-bottom: 16px;
+}
+
+.space.left {
+    margin: 0;
+    margin-left: 16px;
+}
+
+.space.right {
+    margin: 0;
+    margin-right: 16px;
+}
