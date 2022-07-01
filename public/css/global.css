@@ -40,13 +40,14 @@ html {
 
 .items.space {
     justify-content: space-between;
+    margin: 0;
 }
 
-.items.start {
+.items.left {
     justify-content: flex-start;
 }
 
-.items.end {
+.items.right {
     justify-content: flex-end;
 }
 

@@ -2,6 +2,7 @@ import API from './$api'
 
 export default {
     userLogin,
+    getUsers,
     updateUser
 }
 
@@ -10,6 +11,14 @@ async function userLogin(data) {
         method: 'post',
         route: '/users/login',
         data
+    })
+}
+
+async function getUsers(query) {
+    return API({
+        method: 'get',
+        route: '/users',
+        query
     })
 }
 

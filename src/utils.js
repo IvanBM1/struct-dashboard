@@ -12,6 +12,7 @@ Moment.updateLocale('es', {
 export default {
     translate,
     dateLarge,
+    dateTime,
     dateTimeLarge,
     cash
 }
@@ -28,6 +29,10 @@ function translate(value) {
 
 function dateLarge(date) {
     return Moment(date).locale('es').format('dddd DD MMMM YYYY')
+}
+
+function dateTime(date) {
+    return Moment(date).locale('es').format('DD/MMMM/YY hh:mm A')
 }
 
 function dateTimeLarge(date) {

@@ -2,14 +2,16 @@
 
     import { createEventDispatcher } from 'svelte'
 
-    export let isActive = false
     export let options = []
     export let label = null
     export let icon = null
-
+    
     export let selectedId = null
     export let selected = null
     export let value = null
+    
+    export let isActive = false
+    export let column = true
 
     const dispatch = createEventDispatcher()
 
@@ -52,8 +54,8 @@
     }
 </style>
 
-<div class="column">
-    <div class="dropdown fullwidth" class:is-active={ isActive } >
+<div class:column={ column }>
+    <div class="dropdown fullwidth" class:is-active={ isActive }>
         <div class="dropdown-trigger fullwidth">
             <div class="field">
                 {#if label}

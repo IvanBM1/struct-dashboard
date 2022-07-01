@@ -2,6 +2,7 @@
 
     export let label = ''
     export let value = false
+    export let column = true
 
 </script>
 
@@ -55,9 +56,15 @@
 
 </style>
 
-<div class="items start" on:click>
-    <input bind:checked={ value } type="checkbox" class="toggle">
-    {#if label}
-        <label for="" class="label space left">{ label }</label>
-    {/if}
+<div class:column={ column }>
+    <div class="items start" on:click>
+        <input 
+            bind:checked={ value } 
+            type="checkbox" 
+            class="toggle"
+        >
+        {#if label}
+            <label for="" class="label space left">{ label }</label>
+        {/if}
+    </div>
 </div>

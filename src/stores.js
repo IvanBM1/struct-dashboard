@@ -4,15 +4,8 @@ export const ModalStore = writable(null)
 export const ToastStore = Toast(null)
 export const SessionStore = Model('Session')
 
-export const ProductStore = Model('Product')
-export const SaleStore = Model('Sale')
-export const BrandStore = Model('Brand')
-export const StockStore = Model('Stock')
-
-export const ProductsStore = Collection('Products')
-export const SalesStore = Collection('Sales')
-export const BrandsStore = Collection('Brands')
-export const StocksStore = Collection('Stocks')
+export const UserStore = Model('User')
+export const UsersStore = Collection('Users')
 
 function Model(name) {
 

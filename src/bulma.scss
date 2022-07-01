@@ -10,7 +10,6 @@ $box-radius: 24px;
 $table-background-color: white;
 $table-cell-border: 1px solid hsl(0, 0%, 94%);
 
-$input-radius: 12px;
 $input-border-color: hsl(0, 0%, 94%);
 $input-shadow: none;
 
@@ -22,12 +21,36 @@ $modal-card-foot-border-top: none;
 $modal-card-body-background-color: white;
 $modal-card-foot-radius: 24px;
 
+.field {
+    position: relative !important;
+}
+
+.label {
+    font-size: 14px !important;
+    font-weight: 200 !important;
+    position: absolute !important;
+    z-index: 1 !important;
+    background: white !important;
+    left: 8px !important;
+    top: -16px !important;
+    padding: 4px !important;
+}
+
+input {
+    border-radius: 8px !important;
+}
+
+td {
+    cursor: pointer;
+}
+
 .select, .select select {
     width: 100%;
+    border-radius: 8px !important;
 }
 
 .button {
-    border-radius: 12px !important;
+    border-radius: 8px !important;
 }
 
 @import "../node_modules/bulma/sass/utilities/_all.sass";

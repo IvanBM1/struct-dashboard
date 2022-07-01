@@ -12,7 +12,7 @@
 
 </script>
 
-<div class="items" class:center={ center } >
+<div class="items" class:center={ center }>
     <div class="title is-{ titleSize }">
         <span class="icon-text">
             {#if titleIcon}

@@ -1,52 +1,38 @@
 <script>
 
 	import 'flatpickr/dist/flatpickr.css'
-    
-    import Moment from 'moment'
     import Flatpickr from 'svelte-flatpickr'
 
     export let label = ''
-    export let value = Moment().toDate()
-    
+    export let value = new Date()
+
     export let min = null
     export let max = null
-    export let showTime = false
+
+    export let time = false
+    export let column = true
 
     const options = {
         minDate: min,
         maxDate: max,
         altInput: true,
         allowInput: true,
-        enableTime: showTime,
-        dateFormat: 'DD MM YYYY'
+        enableTime: time,
+        dateFormat: time? 'd m Y h:i K' : 'd m Y'
     }
 
 </script>
 
-<style>
-    .field {
-        position: relative;
-    }
-    .label {
-        font-size: 14px;
-        font-weight: 200;
-        position: absolute;
-        z-index: 1;
-        background: white;
-        left: 8px;
-        top: -16px;
-        padding: 4px;
-    }
-</style>
-
-<div class="column">
+<div class:column={ column }>
     <div class="field">
         {#if label}
             <label for="" class="label">{ label }</label>
         {/if}
         <div class="control has-icons-left">
             <span class="icon"><i class="fas fa-calendar"></i></span>
+
             <Flatpickr {options} bind:value />
+
         </div>
     </div>
 </div>

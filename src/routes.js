@@ -5,12 +5,12 @@ import { SessionStore } from './stores'
 import _404View from './$views/404.view.svelte'
 import LoginView from './$views/login.view.svelte'
 import HomeView from './$views/home.view.svelte'
+import IndexView from './$views/index.view.svelte'
 
 const routes = [
     {
         name: '/',
-        component: LoginView,
-        onlyIf: {guard: () => !isLogin(), redirect: 'home'}
+        component: IndexView
     },
     {
         name: 'login',

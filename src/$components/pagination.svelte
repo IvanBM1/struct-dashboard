@@ -39,19 +39,13 @@
 
 <div class="field has-addons">
     <p class="control">
-        <button on:click={ onPrevious } class="button is-small" disabled={ metadata.previous === null }>
+        <button on:click={ onPrevious } class="button is-small is-white" disabled={ metadata.previous === null }>
             <span class="icon is-small"><i class="fas fa-arrow-left" /></span>
         </button>
-    </p>
-    {#if metadata.pages}
-        <p class="control">
-            <button on:click={ onReset } class="button is-small">
-                <span>{ metadata.page + 1 } / { metadata.pages }</span>
-            </button>
-        </p>
-    {/if}
-    <p class="control">
-        <button on:click={ onNext } class="button is-small" disabled={ metadata.next === null }>
+        <button class="button is-small is-white">
+            <span>{ metadata.page + 1 } de { metadata.pages }</span>
+        </button>
+        <button on:click={ onNext } class="button is-small is-white" disabled={ metadata.next === null }>
             <span class="icon is-small"><i class="fas fa-arrow-right" /></span>
         </button>
     </p>

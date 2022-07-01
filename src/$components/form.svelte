@@ -2,7 +2,6 @@
 
     import { createEventDispatcher } from 'svelte'
 
-    import Button from './button.svelte'
     import Loading from './loading.svelte'
 
     const dispatch = createEventDispatcher()
@@ -19,13 +18,15 @@
 
     {#if !loading}
         <slot name="buttons">
-            <div class="columns">
-                <div class="column">
-                    <div class="buttons">
-                        <Button text="Cancelar" icon="ban" color="white" on:click={() => dispatch('canceled')} />
-                        <Button text="Guardar" icon="save" color="primary" type="submit" />
-                    </div>
-                </div>
+            <div class="buttons">
+                <button on:click={() => dispatch('canceled')} class="button is-white">
+                    <span class="icon"><i class="fas fa-ban"></i></span>
+                    <span>Cancelar</span>
+                </button>
+                <button type="submit" class="button is-primary">
+                    <span class="icon"><i class="fas fa-save"></i></span>
+                    <span>Guardar</span>
+                </button>
             </div>
         </slot>
     {/if}

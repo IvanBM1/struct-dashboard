@@ -6,7 +6,6 @@
     import UsersService from '../$services/users.service'
     import Storage from '../storage'
 
-    import Columns from '../$components/columns.svelte'
     import InputText from '../$components/input.text.svelte'
     import InputPassword from '../$components/input.password.svelte'
     import Button from '../$components/button.svelte'
@@ -33,13 +32,13 @@
 
 </script>
 
-<Form on:submit={ userLogin } { loading } >
-    <Columns>
+<Form on:submit={ userLogin } { loading }>
+    <div class="columns">
         <InputText bind:value={ data.email } label="Correo" icon="envelope" placeholder="Correo electronico" />
-    </Columns>
-    <Columns>
+    </div>
+    <div class="columns">
         <InputPassword bind:value={ data.password } label="Contraseña" icon="lock" placeholder="• • • • • • • • • • • •" />
-    </Columns>
+    </div>
     <div slot="buttons">
         <Button type="submit" icon="save" text="Iniciar sessión" color="primary" fullwidth />
     </div>

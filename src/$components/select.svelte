@@ -6,12 +6,15 @@
 
     export let value = ''
     export let label = null
-    export let text = null
+    export let placeholder = null
     export let icon = null
     export let size = ''
     export let required = true
     export let iconType = 'fa'
     export let options = []
+
+    export let column = true
+    export let narrow = false
 
     function onChange() {
         dispatch('change', value)
@@ -31,15 +34,19 @@
     }
 </style>
 
-<div class="column">
+<div class:column={ column } class:is-narrow={ narrow }>
     <div class="field">
         {#if label}
             <label for="" class="label">{ label }</label>
         {/if}
         <div class="control" class:has-icons-left={ icon }>
             <div class="select is-{ size } ">
-                <select bind:value={ value } on:change={ onChange } { required } >
-                    <option value="">{ text || 'Selecciona una opción' }</option>
+                <select 
+                    bind:value={ value } 
+                    on:change={ onChange } 
+                    { required }
+                >
+                    <option value="">{ placeholder || 'Selecciona una opción' }</option>
                     {#each options as option}
                         <option value={ option.value }>{ option.text }</option>
                     {/each}
