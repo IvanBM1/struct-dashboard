@@ -6,6 +6,7 @@ import _404View from './$views/404.view.svelte'
 import LoginView from './$views/login.view.svelte'
 import HomeView from './$views/home.view.svelte'
 import IndexView from './$views/index.view.svelte'
+import UsersView from './$views/users.view.svelte'
 
 const routes = [
     {
@@ -20,6 +21,11 @@ const routes = [
     {
         name: 'home',
         component: HomeView,
+        onlyIf: {guard: isLogin, redirect: 'login'}
+    },
+    {
+        name: 'users',
+        component: UsersView,
         onlyIf: {guard: isLogin, redirect: 'login'}
     },
     {

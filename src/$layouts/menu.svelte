@@ -39,5 +39,7 @@
     <!-- svelte-ignore a11y-missing-attribute -->
     <a on:click={ logout }>Salir</a>
 
-    <slot></slot>
+    <div class="container">
+        <slot></slot>
+    </div>
 {/if}

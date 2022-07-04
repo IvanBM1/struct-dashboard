@@ -9,7 +9,6 @@
 
     export let block = false
     export let title = ''
-    export let icon = ''
     export let id = ''
 
     $: show = $ModalStore === id
@@ -30,20 +29,15 @@
     <div class="modal" class:is-active={ show } in:fade="{{duration: 200}}" out:fade="{{duration: 100}}">
         <div on:click={() => !block && onClose()} class="modal-background"></div>
         <div class="modal-card">
-            <header class="modal-card-head">
-                <p class="modal-card-title">
-                    {#if title}
-                        <div class="title is-4">
-                            <span class="icon is-large"><i class="fas fa-{ icon }"></i></span>
-                            <span>{ title }</span>
-                        </div>
-                    {/if}
-                </p>
-                <button on:click={() => !block && onClose()} class="delete" aria-label="close"></button>
-            </header>
+            {#if title}
+                <header class="modal-card-head">
+                    <p class="modal-card-title">{ title }</p>
+                    <button on:click={() => !block && onClose()} class="delete" aria-label="close"></button>
+                </header>
+            {/if}
             <section class="modal-card-body">
                 <div class="columns is-centered">
-                    <div class="column is-10">
+                    <div class="column is-11">
                         <slot></slot>
                     </div>
                 </div>

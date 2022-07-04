@@ -19,7 +19,7 @@
     {#if !loading}
         <slot name="buttons">
             <div class="buttons">
-                <button on:click={() => dispatch('canceled')} class="button is-white">
+                <button on:click={() => dispatch('canceled')} type="button" class="button is-white">
                     <span class="icon"><i class="fas fa-ban"></i></span>
                     <span>Cancelar</span>
                 </button>

@@ -9,7 +9,6 @@
     import Table from '../$components/table.svelte'
     import Search from '../$components/search.svelte'
     import Button from '../$components/button.svelte'
-    import Select from '../$components/select.svelte'
 
     let loading = false
     let query = {}
@@ -32,17 +31,11 @@
 
 </script>
 
-<Search on:enter={ getUsers } bind:value={ query.find } filters >
+<Search on:enter={ getUsers } bind:value={ query.find } >
     <Button on:click={() => UserStore.modalCreate()} text="Agregar" icon="plus" color="primary" size="small" />
-    <div slot="filters">
-        <Select on:change={ getUsers } bind:value={ query.role } size="small" placeholder="Rol" narrow options={[
-            {value: 'user', text: 'Usuarios'},
-            {value: 'admin', text: 'Administradores'}
-        ]} />
-    </div>
 </Search>
 
-<Table bind:query on:change={ getUsers } { metadata } { loading }>
+<Table on:change={ getUsers } bind:query { metadata } { loading }>
     <thead>
         <th>#</th>
         <th>Nombre</th>
@@ -51,7 +44,7 @@
     </thead>
     <tbody>
         {#each $UsersStore as user, index}
-            <tr>
+            <tr on:click={() => UserStore.modalRead(user)}>
                 <td>{ (index+1) + ( metadata.page * metadata.limit ) }</td>
                 <td>{ user.name }</td>
                 <td>{ user.role }</td>
