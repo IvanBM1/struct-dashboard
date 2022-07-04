@@ -1,12 +1,12 @@
 <script>
 
     import { createEventDispatcher } from 'svelte'
-    import { UsersStore, ToastStore } from '../stores'
+    import { UserStore, ToastStore } from '../stores'
 
-    import UsersService from '../$services/users.service'
+    import UserService from '../$services/users.service'
 
-    import Form from '../$components/form.svelte'
     import InputText from '../$components/input.text.svelte'
+    import Form from '../$components/form.svelte'
 
     const dispatch = createEventDispatcher()
 
@@ -16,13 +16,13 @@
     async function createUser() {
 
         loading = true
-        const response = await UsersService.createUser(data)
+        const response = await UserService.createUser(data)
         loading = false
 
         if(response.error)
             return ToastStore.error(response.error)
 
-        UsersStore.append(response.data)
+        UserStore.append(response.data)
 
         ToastStore.success('¡creado!')
         dispatch('created')

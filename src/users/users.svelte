@@ -5,7 +5,7 @@
 
     import UsersService from '../$services/users.service'
     import Utils from '../utils'
-    
+
     import Table from '../$components/table.svelte'
     import Search from '../$components/search.svelte'
     import Button from '../$components/button.svelte'
@@ -35,11 +35,10 @@
     <Button on:click={() => UserStore.modalCreate()} text="Agregar" icon="plus" color="primary" size="small" />
 </Search>
 
-<Table on:change={ getUsers } bind:query { metadata } { loading }>
+<Table bind:query on:change={ getUsers } { metadata } { loading }>
     <thead>
         <th>#</th>
         <th>Nombre</th>
-        <th>Rol</th>
         <th>Fecha</th>
     </thead>
     <tbody>
@@ -47,7 +46,6 @@
             <tr on:click={() => UserStore.modalRead(user)}>
                 <td>{ (index+1) + ( metadata.page * metadata.limit ) }</td>
                 <td>{ user.name }</td>
-                <td>{ user.role }</td>
                 <td>{ Utils.dateLarge(user.created) }</td>
             </tr>
         {/each}

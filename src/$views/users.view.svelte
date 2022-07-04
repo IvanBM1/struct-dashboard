@@ -20,7 +20,6 @@
     <Users />
 </Menu>
 
-
 <Modal id="UserRead" title="Información" >
     <div class="items right">
         <Dropdown icon="cog" color="white" isRight options={[
