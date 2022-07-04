@@ -5,7 +5,10 @@ export const ToastStore = Toast(null)
 export const SessionStore = Model('Session')
 
 export const UserStore = Model('User')
+export const BillStore = Model('Bill')
+
 export const UsersStore = Collection('Users')
+export const BillsStore = Collection('Bills')
 
 function Model(name) {
 

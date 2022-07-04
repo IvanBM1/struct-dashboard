@@ -20,7 +20,7 @@
 
 {#if !loading && metadata.items}
     <div class="table-container">
-        <table class="table is-hoverable is-narrow is-fullwidth">
+        <table class="table is-hoverable is-fullwidth">
             <slot></slot>
         </table>
     </div>

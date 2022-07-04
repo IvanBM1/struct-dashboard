@@ -23,6 +23,9 @@ function translate(value) {
         case 'disabled': return 'Deshabilitado'
         case 'success': return 'Finalizado'
         case 'error': return 'Error'
+        case 'family': return 'Familia'
+        case 'staff': return 'Personal'
+        case 'general': return 'General'
         default: return value
     }
 }

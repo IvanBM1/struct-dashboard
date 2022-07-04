@@ -7,6 +7,7 @@ import LoginView from './$views/login.view.svelte'
 import HomeView from './$views/home.view.svelte'
 import IndexView from './$views/index.view.svelte'
 import UsersView from './$views/users.view.svelte'
+import BillsView from './$views/bills.view.svelte'
 
 const routes = [
     {
@@ -26,6 +27,11 @@ const routes = [
     {
         name: 'users',
         component: UsersView,
+        onlyIf: {guard: isLogin, redirect: 'login'}
+    },
+    {
+        name: 'bills',
+        component: BillsView,
         onlyIf: {guard: isLogin, redirect: 'login'}
     },
     {
