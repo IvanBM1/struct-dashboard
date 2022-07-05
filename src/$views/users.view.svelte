@@ -35,9 +35,9 @@
 </Modal>
 
 <Modal id="UserUpdate" title="Editar" >
-    <UserUpdate on:updated={ UserStore.modalClose } on:canceled={ UserStore.modalClose } />
+    <UserUpdate on:updated={() => UserStore.modalRead()} on:canceled={() => UserStore.modalRead()} />
 </Modal>
 
 <Modal id="UserDelete" title="Borrar" >
-    <UserDelete on:deleted={ UserStore.modalClose } on:canceled={ UserStore.modalClose } />
+    <UserDelete on:deleted={ UserStore.modalClose } on:canceled={() => UserStore.modalRead()} />
 </Modal>
